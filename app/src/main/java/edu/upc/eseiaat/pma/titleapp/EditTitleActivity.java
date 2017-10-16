@@ -3,6 +3,7 @@ package edu.upc.eseiaat.pma.titleapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class EditTitleActivity extends AppCompatActivity {
@@ -18,5 +19,12 @@ public class EditTitleActivity extends AppCompatActivity {
         edit_title= (EditText)findViewById(R.id.edit_title);
         edit_title.setText(title);
 
+    }
+    public void saveTitle (View view){
+        String new_title= edit_title.getText().toString();
+        Intent data = new Intent();
+        data.putExtra("title", new_title);
+        setResult(RESULT_OK,data);
+        finish();
     }
 }
