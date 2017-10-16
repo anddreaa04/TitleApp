@@ -22,6 +22,7 @@ public class TitleActivity extends AppCompatActivity {
     }
 
     public void editTitle (View view){
+        //(I)
         //1. Crear un 'intent'
         Intent intent= new Intent (this,EditTitleActivity.class);
        //2. Afegir parametres (dades extra) a la crida de l'activitat
@@ -34,6 +35,7 @@ public class TitleActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
       switch(requestCode){
           case 0:
+              //(IV)
               if (resultCode== AppCompatActivity.RESULT_OK){
                   String new_title= data.getStringExtra("title");
                   title=new_title;
